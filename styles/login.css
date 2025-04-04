@@ -1,0 +1,265 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+    font-family: "Poppins", sans-serif; 
+} 
+
+body { 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    min-height: 100vh; 
+    background-image: url(/images/login-background.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed ;
+    background-size: cover;
+} 
+
+.caution-message {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #ff3860;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.caution-message.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.caution-message i {
+    font-size: 20px;
+}
+
+
+.logo-container {
+    text-align: center;
+    margin-bottom: 10px; /* Adds space below the logo */
+}
+
+.logo-container img {
+    width: 200px; /* Adjust the size as needed */
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+.wrapper { 
+    width: 420px; 
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .2);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+    color: #fff;
+    border-radius: 10px;
+    padding: 30px 40px;
+}
+
+.wrapper h1 {
+    font-size: 36px; 
+    text-align: center; 
+} 
+.wrapper .input-box { 
+    position: relative;
+    width: 100%; 
+    height: 50px; 
+    margin: 30px 0; 
+} 
+
+  
+.input-box input { 
+    width: 100%; 
+    height: 100%; 
+    background: transparent; 
+    border: none; 
+    outline: none; 
+    border: 2px solid rgba(255, 255, 255, .2); 
+    border-radius: 40px;
+    font-size: 16px;
+    color: #fff;
+    padding: 20px 45px 20px 20px;
+}
+
+
+.input-box input::placeholder { 
+    color: #ffffff; 
+}
+
+.input-box i {
+    position: absolute; 
+    right: 20px; 
+    top: 50%; 
+    transform: translateY(-50%); 
+    font-size: 20px; 
+}
+
+.wrapper .forget {  
+    display: flex;
+    justify-content: space-between; 
+    font-size: 14.5px; 
+    margin: -15px 0 15px;   
+} 
+.forget input { 
+    accent-color:#ffffff; 
+    margin-right: 3px; 
+} 
+.forget a { 
+    color:#fff; 
+    text-decoration: none; 
+}
+
+.forget a:hover {
+    text-decoration: underline;
+}
+
+.wrapper .btn {
+    width: 100%;
+    height: 45px;
+    background: #ffffff;
+    border: none;
+    outline: none;
+    border-radius: 40px;box-shadow: 0 0 10px rgba(0, 0, 0, 1); 
+    cursor: pointer; 
+    font-size: 16px; 
+    color: #333; 
+    font-weight: 600; 
+} 
+
+.wrapper .btn:hover {
+    background: #e26385; /* Slight hover effect */
+}
+
+
+
+
+
+
+
+
+
+
+/*CSS for the forgot password*/
+.container {
+    position: relative;
+    width: 850px; /* Adjust based on your needs */
+    display: flex;
+    justify-content: center;
+}
+
+#loginForm, #forgotPasswordForm {
+    transition: transform 0.5s ease-in-out;
+}
+
+#forgotPasswordForm {
+    position: absolute;
+    left: 0;
+    transform: translateX(-100%);
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Classes for the slide animation */
+.slide-login-right {
+    transform: translateX(50%) !important;
+    opacity: 0.3 !important;
+    pointer-events: none !important;
+}
+
+.slide-forgot-center {
+    transform: translateX(0) !important;
+    opacity: 1 !important;
+    pointer-events: all !important;
+}
+
+.back-to-login {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.back-to-login a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14.5px;
+}
+
+.back-to-login a:hover {
+    text-decoration: underline;
+}
+
+
+
+
+
+
+
+
+
+/* Vibration animation for input fields */
+@keyframes vibrate-horizontal {
+    0%, 100% { transform: translateX(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+    20%, 40%, 60%, 80% { transform: translateX(5px); }
+}
+
+/* Vibration animation for icons */
+@keyframes vibrate-icon {
+    0%, 100% { 
+        transform: translateY(-50%) translateX(0);
+    }
+    10%, 30%, 50%, 70%, 90% { 
+        transform: translateY(-50%) translateX(-5px);
+    }
+    20%, 40%, 60%, 80% { 
+        transform: translateY(-50%) translateX(5px);
+    }
+}
+
+.vibrate-input {
+    animation: vibrate-horizontal 0.5s ease;
+    border-color: #ff3860 !important;
+}
+
+.vibrate-icon {
+    animation: vibrate-icon 0.5s ease;
+    /* Maintain the original positioning */
+    position: absolute;
+    right: 20px;
+    top: 50%;
+}
+
+
+
+
+
+/* Add success state styles for the caution message */
+.caution-message.success {
+    background-color: #4CAF50;
+}
+
+/* Add disabled state styles for form elements */
+.input-box input:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    background: #ccc;
+}
